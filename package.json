@@ -2,9 +2,10 @@
   "name": "tech-blog",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "sever.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/Jay1194/Tech-Blog/issues"
   },
-  "homepage": "https://github.com/Jay1194/Tech-Blog#readme"
+  "homepage": "https://github.com/Jay1194/Tech-Blog#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "eslint": "^9.0.0",
+    "express": "^4.19.2",
+    "mysql2": "^3.9.4",
+    "sequelize": "^6.37.2"
+  }
 }
