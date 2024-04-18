@@ -1,8 +1,7 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Comment, Post } = require('../../models');
 const bcrypt = require('bcrypt');
 
-// GET /api/users
 router.get('/', (req, res) => {
   User.findAll({
     attributes: { exclude: ['password'] },
@@ -14,13 +13,26 @@ router.get('/', (req, res) => {
     });
 });
 
-//GET /api/users/1
 router.get('/:id', (req, res) => {
   User.findOne({
     attributes: { exclude: ['password'] },
     where: {
       id: req.params.id,
     },
+    include: [
+      {
+        model: Post,
+        attributes: ['id', 'title', 'post_url', 'created_at'],
+      },
+      {
+        model: Comment,
+        attributes: ['id', 'comment_text', 'created_at'],
+        include: {
+          model: Post,
+          attributes: ['title'],
+        },
+      },
+    ],
   })
     .then((dbUserData) => {
       if (!dbUserData) {
@@ -35,9 +47,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
-//POST /api/users
 router.post('/', (req, res) => {
-  //expect {username: 'Jayden', email: 'jayden@gmail.com', password: 'password1234'}
   User.create({
     username: req.body.username,
     email: req.body.email,
@@ -50,9 +60,7 @@ router.post('/', (req, res) => {
     });
 });
 
-//login using a users email
 router.post('/login', (req, res) => {
-  // expects {email: 'lernantino@gmail.com', password: 'password1234'}
   User.findOne({
     where: {
       email: req.body.email,
@@ -71,11 +79,7 @@ router.post('/login', (req, res) => {
   });
 });
 
-//PUT /api/users/1
 router.put('/:id', (req, res) => {
-  //expect {username: 'Jayden', email: 'jayden@gmail.com', password: 'password1234'}
-
-  // if req.body has exact key/value pairs to match the model, you can just use `req.body` instead
   User.update(req.body, {
     individualHooks: true,
     where: {
@@ -95,7 +99,6 @@ router.put('/:id', (req, res) => {
     });
 });
 
-//DELETE /api/users/1
 router.delete('/:id', (req, res) => {
   User.destroy({
     where: {
