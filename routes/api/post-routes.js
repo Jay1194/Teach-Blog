@@ -4,8 +4,8 @@ const { Post, User, Comment } = require('../../models');
 router.get('/', (req, res) => {
   console.log('======================================');
   Post.findAll({
-    attributes: ['id', 'post_url', 'title', 'created_at'],
     order: [['created_at', 'DESC']],
+    attributes: ['id', 'post_url', 'title', 'created_at', 'content_text'],
     include: [
       {
         model: Comment,
@@ -33,7 +33,7 @@ router.get('/:id', (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ['id', 'post_url', 'title', 'created_at'],
+    attributes: ['id', 'post_url', 'title', 'created_at', 'content_text'],
     included: [
       {
         model: User,
@@ -59,6 +59,7 @@ router.post('/', (req, res) => {
     title: req.body.title,
     post_url: req.body.post_url,
     user_id: req.body.user_id,
+    content_text: req.body.content_text,
   })
     .then((dbUserData) => res.json(dbUserData))
     .catch((err) => {
