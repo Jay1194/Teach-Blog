@@ -61,7 +61,7 @@
     color: var(--dim);
   }
 
-  .submit-button:hover {
+  .submit-button:hover, .submit-post:hover {
     color: var(--primary);
     background: var(--dark);
   }
@@ -90,8 +90,15 @@
   .text-box, .submit-button {
     width: 100%;
     padding: 1%;
+  } 
+  
+  .submit-post {
+    width: 96%;
+    padding: 1%;
+    margin: 0.5% 2% 0;
   }
-  .submit-button {
+
+  .submit-button, .submit-post {
     background-color: var(--light-dark);
     border-radius: 7px;
     border: 0;
@@ -101,6 +108,12 @@
     cursor: pointer;
     font-weight: bold;
   }
+
+  .comment-title {
+    color: #1a0905;
+    padding: 2% 2% 0;
+  }
+
 
   .text-box {
     border-radius: 0;
@@ -114,12 +127,13 @@
   
   textarea:focus, input:focus {
     outline: none;
-    border: 1px solid #3486eb;
+    border: 2px solid #00000000;
   }
   
   textarea {
-    min-width: 40%;
-    min-height: 100px;
+    min-width: 96%;
+    min-height: 95px;
+    margin: 0 2% 0;
   }
   
   form > div {
@@ -243,14 +257,17 @@
     margin-bottom: 5%;
   }
   
+  .width {
+    width:80%;
+    margin: 0 10% 1% 10%;
+  }
+ 
   .comment {
     padding: 1%;
-    margin-bottom: 1%;
+    margin: 1%;
   }
   
-  .comment:nth-child(odd) {
-    background-color: #fff5eb;
-  }
+ 
   
   .comment .meta {
     font-size: 90%;
