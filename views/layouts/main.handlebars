@@ -1,33 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech Blog</title>
+    <link rel="stylesheet" href="/public/stylesheets/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tech Blog</title>
-  <link rel="stylesheet" href="/public/stylesheets/style.css">
-</head>
-
-<body>
-  <div class="wrapper">
-    <header>
-      <nav class="nav-links">
-       <p><a href="/">Home</a></p>
-       <p><a href="/">Dashboard</a></p>
-       <p><a href="/">Login</a></p> 
-       <p><a href="/">Logout</a></p>
-      </nav>
-      <h1 class="app-title">
-        The Tech Blog
-      </h1>
-    </header>
-    <main>
-      {{{ body }}}
-    </main>
-    <footer>
-    </footer>
-  </div>
-
-</body>
-
+  <body>
+    <div class="wrapper">
+      <header>
+        <nav class="nav-links">
+          <p><a href="/">Home</a></p>
+          <p><a href="/">Dashboard</a></p>
+          <p><a href="/login">Login</a></p>
+          <button id="logout" class="btn-no-style">Logout</button>
+        </nav>
+        <h1 class="app-title">The Tech Blog</h1>
+      </header>
+      <main>{{{ body }}}</main>
+      <footer></footer>
+    </div>
+    <script src="/public/javascript/logout.js"></script>
+  </body>
 </html>

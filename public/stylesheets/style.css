@@ -1,8 +1,10 @@
 :root {
   --primary: #e5c89f;
+  --light-primary: #d9d1c5;
   --secondary: #9caea9;
   --tertiary: #788585;
-  --light-dark: #6f6866;
+  --light-brown: #816159;
+  --light-dark: #80715e;
   --dim: #a58b6d;
   --dark: #1a0905;
   --border-radius: .3rem;
@@ -11,7 +13,11 @@
 * {
     box-sizing: border-box;
   }
-  
+
+  .form {
+    padding: 1.5% 1.5% 0;
+  }
+
   body, html {
     background-color: var(--primary);
     margin: 0;
@@ -29,8 +35,14 @@
   h6 {
     font-weight: 700;
     margin: 0;
-    color: var(--dark);
+    color: var(--primary);
     line-height: 1.25;
+  }
+  .nav-link a {
+    color: #0602b5;
+  }
+  .nav-link {
+    margin: 1% 0;
   }
   
   main a {
@@ -43,10 +55,15 @@
   .content {
     margin: 1%;
     font-weight: 600;
-}
+  }
   
   .nav-links a:hover, main a:hover {
     color: var(--dim);
+  }
+
+  .submit-button:hover {
+    color: var(--primary);
+    background: var(--dark);
   }
  /*
   button {
@@ -69,7 +86,26 @@
     margin: 0;
     padding: 0;
   }
-  
+
+  .text-box, .submit-button {
+    width: 100%;
+    padding: 1%;
+  }
+  .submit-button {
+    background-color: var(--light-dark);
+    border-radius: 7px;
+    border: 0;
+    font-size: 1.4vw;
+    color: var(--light-primary);
+    transition: color .1s;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .text-box {
+    border-radius: 0;
+  }
+
   textarea, input {
     padding: .5%;
     border-radius: 5px;
@@ -114,7 +150,7 @@
     width: 35%;
     margin-bottom: .5%;
     font-size: x-large;
-}
+  }
 
   .nav-links a {
     color: var(--primary);
@@ -128,7 +164,7 @@
     padding: 0 10px;
     display: inline-block;
     border-radius: var(--border-radius);
-    box-shadow: 6px 5px var(--light-dark);
+    box-shadow: 6px 5px var(--light-brown);
   }
   
   main {
@@ -142,7 +178,7 @@
     padding: 0;
     cursor: pointer;
     text-decoration: none;
-    color: #225ca3;
+    color: var(--primary);
     font-size: 100%;
     font-weight: bold;
     transition: color .1s;
@@ -151,7 +187,7 @@
   
   .btn-no-style:hover {
     background: none;
-    color: #3486eb;
+    color:#d41414;
   }
   
   .delete-post-btn {
@@ -162,12 +198,16 @@
     background-color: #ff643d;
   }
   
-  .post-list li {
+  .post-list li, .post-list-login {
     margin: 0 0 20px 0;
     border: 3px solid var(--dark);
     border-radius: var(--border-radius);
     list-style-type: none;
-}
+  }
+  section.post-list-login {
+    margin: 1%;
+  }
+
   .post {
     margin-bottom: 2%;
     line-height: 150%;
@@ -225,7 +265,7 @@
   .edit-post-form {
     margin-bottom: 5%;
   }
-  
+  /*
   footer {
     border-top: 1px solid #ccc;
     display: flex;
@@ -233,3 +273,4 @@
     padding: 1%;
     font-size: 110%;
   }
+  */
