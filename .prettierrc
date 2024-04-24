@@ -15,10 +15,26 @@
   "semi": true,
   "singleQuote": true,
   "tabWidth": 2,
-  "trailingComma": "es5",
+  "trailingComma": "none",
   "useTabs": false,
   "embeddedLanguageFormatting": "auto",
   "vueIndentScriptAndStyle": false,
   "filepath": "c:\\Users\\13065\\projects2\\Tech-Blog\\config\\connection.js",
-  "parser": "babel"
+  "parser": "babel",
+  "overrides": [
+    {
+      "files": "*.handlebars",
+      "options": {
+        "parser": "html",
+        "semi": false
+      }
+    },
+    {
+      "files": "*.hbs",
+      "options": {
+        "parser": "html",
+        "semi": false
+      }
+    }
+  ]
 }
