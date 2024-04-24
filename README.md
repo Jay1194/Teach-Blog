@@ -11,7 +11,7 @@
   - [License](#license)
 
 ## Description
-
+This full-stack tech blog uses MySQL2, Sequelize, Express, and Node.js to enable users to create accounts, log in/out, and post comments. It features RESTful APIs, Express Handlebars, and session management for a secure, interactive experience.
 
 ![Screenshot 2024-04-24 122056](https://github.com/Jay1194/Tech-Blog/assets/105843570/3959515f-b3d1-437e-b2b4-81b4238c721b)
 ![Screenshot 2024-04-24 122126](https://github.com/Jay1194/Tech-Blog/assets/105843570/410ad559-5964-4535-a79f-5b0c882d8bde)
@@ -20,8 +20,6 @@
 ![Screenshot 2024-04-24 122233](https://github.com/Jay1194/Tech-Blog/assets/105843570/287745d7-1e1d-49fd-ae3e-a0f3ada5a03f)
 ![Screenshot 2024-04-24 122312](https://github.com/Jay1194/Tech-Blog/assets/105843570/2e412f0e-735c-44f4-abe9-8b36c1eed402)
 ![Screenshot 2024-04-24 122345](https://github.com/Jay1194/Tech-Blog/assets/105843570/56965ff9-82d6-49c5-b40d-7c32780bb539)
-
-This full-stack tech blog uses MySQL2, Sequelize, Express, and Node.js to enable users to create accounts, log in/out, and post comments. It features RESTful APIs, Express Handlebars, and session management for a secure, interactive experience.
 
 ## Features
 
