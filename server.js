@@ -1,6 +1,5 @@
 const sequelize = require('./config/connection');
 const express = require('express');
-require('dotenv').config();
 
 const path = require('path');
 const helpers = require('./utils/helpers');
@@ -33,7 +32,6 @@ const hbs = exhbs.create({ helpers });
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
