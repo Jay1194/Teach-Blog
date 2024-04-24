@@ -1,11 +1,12 @@
-const dotenv = require('dotenv');
-dotenv.config();
-const express = require('express');
-const routes = require('./routes');
 const sequelize = require('./config/connection');
+const express = require('express');
+require('dotenv').config();
+const routes = require('./routes');
 const path = require('path');
 const helpers = require('./utils/helpers');
 const session = require('express-session');
+const exhbs = require('express-handlebars');
+
 const threeHours = 3 * 60 * 60 * 1000;
 
 const app = express();
@@ -27,7 +28,6 @@ const sess = {
 
 app.use(session(sess));
 
-const exhbs = require('express-handlebars');
 const hbs = exhbs.create({ helpers });
 
 app.engine('handlebars', hbs.engine);
