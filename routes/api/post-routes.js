@@ -5,21 +5,21 @@ router.get('/', (req, res) => {
   console.log('======================================');
   Post.findAll({
     order: [['created_at', 'DESC']],
-    attributes: ['id', 'post_url', 'title', 'created_at', 'content_text'],
+    attributes: ['id', 'title', 'created_at', 'content_text'],
     include: [
       {
         model: Comment,
         attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
         include: {
           model: User,
-          attributes: ['username'],
-        },
+          attributes: ['username']
+        }
       },
       {
         model: User,
-        attributes: ['username'],
-      },
-    ],
+        attributes: ['username']
+      }
+    ]
   })
     .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
@@ -31,15 +31,15 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   Post.findOne({
     where: {
-      id: req.params.id,
+      id: req.params.id
     },
-    attributes: ['id', 'post_url', 'title', 'created_at', 'content_text'],
+    attributes: ['id', 'title', 'created_at', 'content_text'],
     included: [
       {
         model: User,
-        attributes: ['username'],
-      },
-    ],
+        attributes: ['username']
+      }
+    ]
   })
     .then((dbPostData) => {
       if (!dbPostData) {
@@ -57,9 +57,8 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   Post.create({
     title: req.body.title,
-    post_url: req.body.post_url,
-    user_id: req.body.user_id,
-    content_text: req.body.content_text,
+    user_id: req.session.user_id,
+    content_text: req.body.content_text
   })
     .then((dbUserData) => res.json(dbUserData))
     .catch((err) => {
@@ -72,11 +71,12 @@ router.put('/:id', (req, res) => {
   Post.update(
     {
       title: req.body.title,
+      content_text: req.body.content_text
     },
     {
       where: {
-        id: req.params.id,
-      },
+        id: req.params.id
+      }
     }
   )
     .then((dbPostData) => {
@@ -95,8 +95,8 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
   Post.destroy({
     where: {
-      id: req.params.id,
-    },
+      id: req.params.id
+    }
   })
     .then((dbPostData) => {
       if (!dbPostData) {

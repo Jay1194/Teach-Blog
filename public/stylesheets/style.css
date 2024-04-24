@@ -30,7 +30,6 @@
   h1,
   h2,
   h3,
-  h4,
   h5,
   h6 {
     font-weight: 700;
@@ -38,11 +37,9 @@
     color: var(--primary);
     line-height: 1.25;
   }
-  .nav-link a {
-    color: #0602b5;
-  }
-  .nav-link {
-    margin: 1% 0;
+
+  ol {
+  list-style: none;
   }
   
   main a {
@@ -51,7 +48,9 @@
     font-weight: bold;
     transition: color .1s;
   }
-
+ .nav-link a {
+    color: #121a91;
+  }
   .content {
     margin: 1%;
     font-weight: 600;
@@ -65,23 +64,7 @@
     color: var(--primary);
     background: var(--dark);
   }
- /*
-  button {
-    background-color: #225ca3;
-    border: 0;
-    padding: 1%;
-    color: white;
-    font-weight: bold;
-    transition: background-color .1s;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-   
-  button:hover {
-    background-color: #3486eb;
-  }
- */
-  
+
   .post-list {
     margin: 0;
     padding: 0;
@@ -159,7 +142,7 @@
   }
 
   .nav-links {
-    justify-content: space-between;
+    justify-content: space-start;
     display: flex;
     width: 35%;
     margin-bottom: .5%;
@@ -171,6 +154,10 @@
     text-decoration: none;
   }
   
+  nav.nav-links p {
+    margin-right: 15%;
+}
+
   .app-title, .app-title a {
     font-size: 3rem;
     background-color: var(--primary);
@@ -197,19 +184,6 @@
     font-weight: bold;
     transition: color .1s;
     margin-left: 16px;
-  }
-  
-  .btn-no-style:hover {
-    background: none;
-    color:#d41414;
-  }
-  
-  .delete-post-btn {
-    background-color: #d41414;
-  }
-  
-  .delete-post-btn:hover {
-    background-color: #ff643d;
   }
   
   .post-list li, .post-list-login {
@@ -246,7 +220,7 @@
 
   .title a {
     font-size: 1.3vw;
-}
+  }
   
   .edit-link {
     display: block;
@@ -266,28 +240,12 @@
     padding: 1%;
     margin: 1%;
   }
-  
- 
-  
   .comment .meta {
     font-size: 90%;
     margin-bottom: .5%;
     opacity: .6;
   }
   
-  .new-post-form input {
-    width: 300px;
-  }
-  
   .edit-post-form {
     margin-bottom: 5%;
   }
-  /*
-  footer {
-    border-top: 1px solid #ccc;
-    display: flex;
-    justify-content: center;
-    padding: 1%;
-    font-size: 110%;
-  }
-  */
