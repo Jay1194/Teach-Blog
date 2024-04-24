@@ -13,11 +13,11 @@
         <nav class="nav-links">
           <p><a href="/">Home</a></p>
           {{#if loggedIn}}
-          <p><a href="api/users/dashboard">Dashboard</a></p>
-          <button id="api/users/logout" class="btn-no-style">Logout</button>
+          <p><a href="/dashboard">Dashboard</a></p>
+          <button id="logout" class="btn-no-style">Logout</button>
           {{else}}
-          <p><a href="api/users/login">Dashboard</a></p>
-          <p><a href="api/users/login">Login</a></p>
+          <p><a href="/login">Dashboard</a></p>
+          <p><a href="/login">Login</a></p>
           {{/if}}
         </nav>
         <h1 class="app-title">The Tech Blog</h1>

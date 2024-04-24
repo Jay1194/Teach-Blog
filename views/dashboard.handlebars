@@ -1,0 +1,38 @@
+{{#if posts.length}}
+<section>
+  <h2 class="comment-title">Your Posts</h2>
+  <ol>
+    {{#each posts}}
+    <li>
+    <article class="post">
+      <div class="title">
+        <a href="/dashboard/edit/{{id}}">{{title}}</a>
+        <span> {{format_date created_at}}
+      </div>
+      </article>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+
+<section class="post-list-login">
+  <article class="post">
+    <div class="title">
+      <h2>Create New Post</h2>
+    </div>
+    <form class="new-post-form form">
+      <div>
+        <label for="post-title">Title</label>
+        <input class="text-box" type="text" id="post-title" name="post-title" />
+      </div>
+      <div>
+        <label for="content_text">Content</label>
+        <input class="text-box" id="content_text" name="content_text" />
+      </div>
+      <button type="submit" class="btn submit-button">Create</button>
+    </form>
+  </article>
+</section>
+
+<script src="/public/javascript/add-post.js"></script>

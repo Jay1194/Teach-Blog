@@ -1,0 +1,32 @@
+{{> post-info post}} {{#if loggedIn}}
+<section class="post-list">
+  <li>
+    <article class="post">
+      <div class="title"></div>
+      <form class="comment-form">
+        <div>
+          <h2 class="comment-title">Comment</h2>
+          <textarea name="comment-body"></textarea>
+          <button class="submit-post" type="submit">Submit</button>
+        </div>
+      </form>
+    </article>
+  </li>
+</section>
+{{/if}} {{#each post.comments}}
+<section class="post-list width">
+  <li>
+    <article class="post">
+      <div class="title"></div>
+      <section class="comment">
+        <div>{{comment_text}}</div>
+        <h4 class="comment-title">
+          - {{user.username}}, {{format_date created_at}}
+        </h4>
+      </section>
+    </article>
+  </li>
+</section>
+{{/each}} {{#if loggedIn}}
+<script src="/public/javascript/comment.js"></script>
+{{/if}}

@@ -1,0 +1,37 @@
+<section class="post-list">
+  <li>
+    <article class="post">
+      <div class="title"></div>
+      <h2 class="comment-title">Edit Post</h2>
+      <form class="edit-post-form form">
+        <div>
+          <label for="title-edit">Title</label>
+          <input
+            class="text-box"
+            name="post-title"
+            type="text"
+            id="title-edit"
+            value="{{post.title}}"
+          />
+        </div>
+        <div>
+          <label for="content-edit">Content</label>
+          <input
+            class="text-box"
+            name="content_text"
+            type="text"
+            id="content_edit"
+            value="{{post.content_text}}"
+          />
+        </div>
+        <button class="submit-post" type="submit">Edit Post</button>
+        <button type="button" class="submit-post delete-post-btn">
+          Delete post
+        </button>
+      </form>
+    </article>
+  </li>
+</section>
+
+<script src="/public/javascript/edit-post.js"></script>
+<script src="/public/javascript/delete-post.js"></script>
