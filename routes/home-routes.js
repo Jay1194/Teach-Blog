@@ -31,7 +31,7 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/api/post/:id', (req, res) => {
+router.get('/post/:id', (req, res) => {
   Post.findOne({
     where: {
       id: req.params.id
@@ -68,7 +68,7 @@ router.get('/api/post/:id', (req, res) => {
     });
 });
 
-router.get('/api/login', (req, res) => {
+router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
     return;
@@ -76,7 +76,7 @@ router.get('/api/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/api/signup', (req, res) => {
+router.get('/signup', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
     return;
