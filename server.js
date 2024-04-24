@@ -6,6 +6,9 @@ const helpers = require('./utils/helpers');
 const session = require('express-session');
 const threeHours = 3 * 60 * 60 * 1000;
 
+const dotenv = require('dotenv');
+dotenv.config();
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
